@@ -1,0 +1,42 @@
+body {
+    background-color: antiquewhite;
+    margin: 0;
+}
+
+#google { /* id */
+    background-color: #62dc12; 
+    /* 0-9, a = 10, b = 11, ... , f = 15 */
+    /*
+    62 hex => 16^0 * 2 + 16^1 * 6 = 2 + 16 * 6 = 98
+    dc hex => 16^0 * 12 + 16^1 * 13 = 12 + 16 * 13 = 220
+    ff hex => 15 + 16 ^ 1 * 15 = 255
+    */
+    /* background-color: rgb(98, 220, 18); */
+}
+
+input.camp_login { /* class */
+    border: 2px dotted red;
+}
+
+[border="1"] {
+    background-color: turquoise;
+}
+
+#zona_autentificare p {
+    text-decoration: underline;
+}
+
+form > p {
+    font-size: 1.3em;
+    color: green;
+}
+
+#pisica > img { 
+    border: 3px dotted gray;
+    padding: 20px;
+    margin: 30px;
+    margin-bottom: 0;
+}
+#pisica > figcaption {
+    text-align: center;
+}

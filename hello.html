@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello HTML</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header>
+        <p>Logo</p>
+
+        <nav>
+            <a href="pagina2.html">Pagina 2</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <h1>Hello!</h1>
+
+        <h2>Sectiunea 1</h2>
+
+        <section>
+            <h3>Sectiunea 1.1</h3>
+
+            <p>Text din sectiunea 1.1</p>
+
+            <p>Lista de cumparaturi:</p>
+
+            <ul><!-- unordeder list -->
+                <li>lapte</li>
+                <li>branza</li>
+                <li>oua</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Sectiunea 1.2</h3>
+
+            <p>Text din sectiunea 2.2</p>
+
+            <p>Lista de task-uri:</p>
+
+            <ol><!-- ordered list -->
+                <li>Cumpara mancare</li>
+                <li>Plimba cainele</li>
+                <li>Gateste</li>
+                <li>Fa curat</li>
+            </ol>
+        </section>
+
+        <h2>Sectiunea 2</h2>
+
+        <article>
+            <header>
+                <h3>Studenti</h3>
+            </header>
+
+            <table border="1">
+                <tbody>
+                    <tr>
+                        <td>Popescu</td><!-- Table Data -->
+                        <td>Vasile</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>Anghelescu</td>
+                        <td>Daniel</td>
+                        <td>9</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr><!-- table row -->
+                        <th>Nume</th>
+                        <th>Prenume</th>
+                        <th>Nota</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <footer>
+                Read more here...
+            </footer>
+        </article>
+
+        <hr /><!-- Horizontal line -->
+
+        <p>Text de sub <strong>tabel</strong>
+            dar nu <em>trece</em> pe <b><i>linie noua</i></b><br />
+            acum trece
+        </p>
+
+        <pre>
+        Text preformatatat
+         Aici am o linie noua.
+    </pre>
+
+        <figure id="pisica">
+            <img src="pisica.jpeg" alt="o pisica intinsa" />
+            <figcaption>Fig. 1. Poza cu pisica</figcaption>
+        </figure>
+
+        <p id="google">
+            Vizitati <a href="http://google.ro">Google</a>
+        </p>
+
+        <div id="zona_autentificare">
+            <h2 class="camp_login">Autentificare</h2>
+            <form action="http://localhost:8080/api/auth/login" method="post">
+                <p>
+                    <label for="login_username">Username:</label>
+                    <input class="camp_login" placeholder="Username-ul dvs." type="text" name="username" id="login_username" required minlength="3" />
+                </p>
+                <p>
+                    <label for="login_password">Password:</label>
+                    <input class="camp_login" type="password" name="password" id="login_password" />
+                </p>
+                <p>
+                    <label for="culoare_preferata">Culoare preferata:</label>
+                    <input type="color" name="culoare" id="culoare_preferata" />
+                </p>
+                <p>
+                    <label for="data_nasterii">Data nasterii:</label>
+                    <input type="date" id="data_nasterii" />
+                </p>
+                <p>
+                    <input type="checkbox" id="bifa_termeni" />
+                    <label for="bifa_termeni">Sunt de acord cu termenii si conditiile</label>
+                </p>
+                <button>Trimite</button>
+            </form>
+        </div>
+
+    </main>
+
+    <footer>
+        Copyright &copy; 2023 DB
+    </footer>
+
+</body>
+
+</html>

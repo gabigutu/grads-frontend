@@ -1,0 +1,39 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<data>
+    <books>
+        <book>
+            <title lang="en">Harry Potter and the Sorcerer&apos;s Stone</title>
+            <title lang='ro'>Harry Potter și piatra filosofală</title>
+            <author>J. K. &amp; Rowling</author>
+            <volume>Volumul &lt; &gt; 1</volume>
+            <year>2000</year>
+            <code>
+                <!-- Code to be executed for this book -->
+            <![CDATA[ 
+            <script>
+                alert('Hello!');
+            </script>
+            ]]>
+            </code>
+        </book>
+        <book>
+            <title>Maytrei</title>
+            <author>Mircea Eliade &#969; &#x3C9;</author>
+            <year>1970</year>
+            <deprecated /> <!-- self closing tag -->
+        </book>
+    </books>
+    <other>
+        <table> <!-- tabel -->
+            <tr>
+                <td>Vasile</td>
+                <td>Popescu</td>
+            </tr>
+        </table>
+        <masa:table xmlns:masa="http://example.com/masa.dtd"> <!-- masa -->
+            <masa:height>80</masa:height>
+            <masa:diameter>60</masa:diameter>
+            <year>2000</year>
+        </masa:table>
+    </other>
+</data>
