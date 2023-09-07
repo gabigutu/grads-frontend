@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html {
+            font-size: 1px;
+        } 
+        @media screen and (min-width: 768px) {
+            html {
+                font-size: 2px;
+            }
+        }
+
+        body {
+            font-size: 24px;
+        }
+
+        .wrapper-footer {
+            font-size: 30px;
+        }
+
+        footer {
+            font-size: 0.5em; /* 0.5 * cat are font-size-ul la momentul actual */
+            background-color: cadetblue;
+            width: 300rem;
+        }
+
+        header {
+            font-size: 3em; /* 3 * font-size-ul de pe tag-ul root (html) */
+            width: 400rem;
+            background-color: bisque;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>Header</header>
+    <div class="wrapper-footer">
+        <footer>Footer</footer>
+    </div>
+    
+</body>
+</html>
