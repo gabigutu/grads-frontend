@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo</title>
+
+    <style>
+        a {
+            color: green;
+        }
+
+        a:hover {
+            font-weight: bold;
+        }
+        a:visited {
+            /* text-decoration: line-through; */
+            color: red;
+        }
+        a:active {
+            font-size: 30px;
+        }
+        a:focus {
+            font-size: 100px;
+        }
+
+        ul > li:first-child {
+            border-top: 2px solid black;
+        }
+        ul > li:last-child {
+            border-bottom: 2px solid black;
+        }
+        ul > li:nth-child(3) {
+            background-color: yellow;
+        }
+        ul > li:only-child {
+            font-weight: bold;
+            text-decoration: overline;
+        }
+        ul::after {
+            content: " <> ";
+            font-size: 50px;
+
+        }
+
+        button:hover {
+            transition: transform 5s;
+            transform: translateX(50px);
+        }
+    </style>
+</head>
+<body>
+
+    <a href="http://google.ro">Google</a>
+
+    <ul>
+        <li>Lapte</li>
+        <li>Branza</li>
+        <li>Oua</li>
+        <li>Paine</li>
+    </ul>
+
+    <ul>
+        <li>Singur</li>
+    </ul>
+
+    <button>Apasa-ma</button>
+    
+</body>
+</html>

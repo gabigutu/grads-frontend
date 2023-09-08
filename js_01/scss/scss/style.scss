@@ -1,0 +1,21 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: red;
+$border-style: solid;
+$border-size: 1px;
+
+body {
+    font: 100% $font-stack;
+    color: $primary-color;
+}
+
+p {
+    border: $border-size $border-style $primary-color;
+}
+
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+}
