@@ -1,6 +1,6 @@
 const moviestable = document.getElementById('movies');
 
-const movies = [
+const initialMovies = [
     { title: 'Fromula1', description: 'best sport', rating: 5, actors: ['hamilton', 'verstapen', 'vettel'] },
     { title: 'Fotbal', description: 'Just Money', rating: 4.7, actors: ['messi', 'ronaldo', 'neymar'] },
     { title: 'Tennis', description: 'Nice Sport', rating: 3, actors: ['djokovic', 'federer', 'nadal'] },
@@ -49,7 +49,7 @@ function adauga(movies) {
 
 const adaugaFilmeButton = document.getElementById('adaugaFilme');
 adaugaFilmeButton.addEventListener('click', function () {
-    adauga(movies);
+    adauga(initialMovies);
 });
 
 function sortare() {

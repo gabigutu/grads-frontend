@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+
+    <script>
+        function setCookie(key, value) {
+            document.cookie = key + '=' + value;
+        }
+        function getCookies() {
+            return document.cookie;
+        }
+        function getCookiesAsArray() {
+            let cookiesArray = [];
+            const cookies = document.cookie.split('; ');
+            for (cookie of cookies) { // key=value
+                elements = cookie.split('=');
+                const key = elements[0];
+                const value = elements[1];
+                cookiesArray.push({
+                    key, // key: key
+                    value // value: value
+                });
+            }
+            return cookiesArray;
+        }
+
+        setCookie('nume', 'Vasile');
+        setCookie('prenume', 'Popescu');
+        // console.log(getCookies());
+        const cookiesArray = getCookiesAsArray();
+        console.log(cookiesArray);
+
+    </script>
+    
+</body>
+</html>
