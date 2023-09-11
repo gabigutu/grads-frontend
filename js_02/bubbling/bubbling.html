@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling</title>
+
+    <style>
+        div {
+            background-color: beige;
+            height: 600px;
+        }
+
+        ul {
+            padding: 50px;
+            background-color: aquamarine;
+            height: 300px;
+        }
+
+        li {
+            background-color: blueviolet;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="div-shopping-list">
+        Shopping list:
+        <ul>
+            <li>Lapte</li>
+            <li>Branza</li>
+            <li>Oua</li>
+        </ul>
+    </div>
+
+    <form action="" method="post" id="form-search">
+        Search: <input type="text" name="search">
+        <button>Trimite</button>
+    </form>
+
+    <a href="http://google.ro" id="dontclick">Google</a>
+
+    <script>
+        const bodyElement = document.querySelector('body');
+        bodyElement.addEventListener('click', function() {
+            console.log('clicked body');
+        })
+
+        const divElement = document.getElementById('div-shopping-list');
+        divElement.addEventListener('click', function(event) {
+            console.log(event);
+            event.stopPropagation();
+            console.log('clicked div-shopping-list');
+        })
+
+        const ulElement = document.querySelector('#div-shopping-list > ul');
+        ulElement.addEventListener('click', function() {
+            console.log('clicked ul');
+        })
+
+        const liElement = document.querySelector('#div-shopping-list > ul > li');
+        liElement.addEventListener('click', function(event) {
+            // console.log(event);
+            // event.preventDefault();
+            console.log('clicked li');
+        })
+
+        const formSearch = document.getElementById('form-search');
+        formSearch.addEventListener('submit', function(event) {
+            console.log(event);
+            event.preventDefault();
+            console.log('trimit');
+        })
+
+        const googleLink = document.getElementById('dontclick');
+        googleLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            console.log('nu mai pleci');
+        });
+    </script>
+</body>
+
+</html>
