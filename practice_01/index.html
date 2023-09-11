@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <button onclick="adauga()">Adauga</button>
+    <button id="adaugaFilme">Adauga</button>
     <select id="select">
         <option value="titlu">titlu</option>
         <option value="rating">Rating</option>
     </select>
     <button onclick="sortare()">Sortare</button>
-    <table id="movies"> 
-        <tr>
+    <table id="movies">
+        <tr class="header-row">
             <td>Title</td>
             <td>Description</td>
             <td>Acthors</td>
             <td>Rating</td>
-            </tr>
+            <td>Actions</td>
+        </tr>
     </table>
     <script src="index.js"></script>
 </body>
+
 </html>
