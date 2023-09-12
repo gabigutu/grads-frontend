@@ -16,9 +16,26 @@
             console.log('2) Am primit pe json ', jsonResponse);
             console.log('3) mesaj de dupa await');
         }
-        cereTodo();
+        //cereTodo();
 
-        
+        function cereTodoAsync(){
+            const URL = 'https://jsonplaceholder.typicode.com/todos/3';
+            let fetchResponse =  fetch(URL).then((res) =>{
+                console.log(res," 2 - Am apelat promise-ul");
+                return res.json();
+            }).then((response) =>{
+                console.log(response,"3 - Am afisat rezultatul");
+            }); // asteapta sa se resolve promise-ul
+            setTimeout(function(){
+                console.log('1) Am trecut de await', fetchResponse);
+            }, 3000)
+            
+            // const jsonResponse =  fetchResponse.json();
+            // console.log('2) Am primit pe json ', jsonResponse);
+            // console.log('3) mesaj de dupa await');
+        }
+
+        cereTodoAsync();
     </script>
     
 </body>
