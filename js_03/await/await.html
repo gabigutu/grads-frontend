@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Await</title>
+</head>
+<body>
+
+    <script>
+        async function cereTodo() { // codul este sincron (am await)
+            const URL = 'https://jsonplaceholder.typicode.com/todos/3';
+            let fetchResponse = await fetch(URL); // asteapta sa se resolve promise-ul
+            console.log('1) Am trecut de await', fetchResponse);
+            const jsonResponse = await fetchResponse.json();
+            console.log('2) Am primit pe json ', jsonResponse);
+            console.log('3) mesaj de dupa await');
+        }
+        cereTodo();
+    </script>
+    
+</body>
+</html>

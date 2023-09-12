@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+<body>
+
+    <script>
+        const URL = 'https://jsonplaceholder.typicode.com/todos?userId=7';
+        const fetchTodosOfUser = fetch(URL).then((response) => {
+            console.log('Am primit de la fetch ', response);
+            const responseJson = response.json();
+            responseJson.then((raspunsPrelucrat) => {
+                console.log('Am primit raspunsul prelucrat ', raspunsPrelucrat);
+            });
+        });
+        console.log(fetchTodosOfUser);
+
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos</title>
+</head>
+
+<body>
+
+    <form id="add-post">
+        <p>
+            <label for="task">Task:</label>
+            <input type="text" id="task" />
+        </p>
+        <p>
+            <button type="button" onclick="addPost()">Add</button>
+        </p>
+    </form>
+
+    <ul id="todos"></ul>
+
+    <script>
+        const URL = 'https://jsonplaceholder.typicode.com/todos'
+        const todosUl = document.getElementById('todos');
+
+        function addTaskToUl(todo) {
+            const li = document.createElement('li');
+            // delectus aut autem (completed)
+            const textNode = document.createTextNode(
+                todo.title + ' (' + todo.completed + ')'
+            );
+            li.appendChild(textNode);
+            todosUl.appendChild(li);
+        }
+
+        function requestTodos() {
+            fetch(URL).then(response => response.json()).then(todos => {
+                // array of todos
+                for (let todo of todos) {
+                    addTaskToUl(todo);
+                }
+            });
+        }
+        requestTodos();
+
+        function addPost() {
+            const taskElement = document.getElementById('task');
+            const method = 'POST';
+            const task = {
+                title: taskElement.value,
+                completed: false
+            }
+            fetch(URL, {
+                method,
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
+                body: JSON.stringify(task)
+            }).then((response) => response.json()).then((obj) => {
+                console.log('Server said it saved the following object ', obj);
+                addTaskToUl(obj);
+            });
+        }
+    </script>
+
+</body>
+
+</html>
