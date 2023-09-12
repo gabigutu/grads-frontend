@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<body>
+
+    <script>
+        class Child {
+            constructor(name) {
+                this.name = name;
+            }
+
+            get age() {
+                console.log('apel getter');
+                return this._age;
+            }
+
+            set age(val) {
+                console.log('apel setter ');
+                this._age = val;
+            }
+        }
+
+        c = new Child('Copil');
+
+        class Parent {
+            
+            constructor(name) {
+                this.name = name;
+                Parent.nrParinti++;
+            }
+
+            static numarParinti() {
+                return Parent.nrParinti;
+            }
+        }
+        Parent.nrParinti = 0;
+        p = new Parent('Parinte');
+        console.log(Parent.numarParinti());
+        p = new Parent('Parinte2');
+        console.log(Parent.numarParinti());
+
+        c.age = 10;
+        console.log('Varsta copil ', c.age);
+    </script>
+    
+</body>
+</html>

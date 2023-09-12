@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+
+<body>
+
+    <script>
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.getFullName = function () {
+                return this.firstName + " " + this.lastName;
+            };
+        }
+        var p1 = new Person("Mihai", "Cristescu");
+        var p2 = new Person("Marian", "Vasilescu");
+        console.log(p1, p2);
+        console.log(p1.__proto__, p2.__proto__);
+        console.log(Person.prototype);
+
+        Person.prototype.functieComuna = function() {
+            return 'o functie comuna';
+        }
+        console.log(p1.functieComuna());
+        p1.ceva = function() {
+            return 'ceva';
+        }
+        console.log(p1.ceva());
+        // console.log(p2.ceva());
+        p1.__proto__.altceva = function() {
+            return 'altceva';
+        }
+        console.log(p1.altceva());
+        console.log(p2.altceva());
+
+        console.log(p1.__proto__ === p2.__proto__); // true
+        console.log(p1.__proto__ === Person.prototype); // true
+
+        Person.prototype.job = "Programmer";
+        console.log(p1.job, p2.job);
+
+        p2.job = "Medic";
+        console.log(p1.job, p2.job);
+
+        Person.prototype.siblings = ["Vasile", "Irina"]; // array-ul este o referinta
+        console.log(p1.siblings, p2.siblings);
+        p1.siblings.push('George');
+        console.log(p1.siblings, p2.siblings);
+
+        function Parent(name) {
+            this.parentName = name;
+        }
+        Parent.prototype.getParentName = function() {
+            return this.parentName;
+        }
+
+        function Child(name) {
+            this.childName = name;
+        }
+        Child.prototype = new Parent('Parinte');
+        Child.prototype.getChildName = function() {
+            return this.childName;
+        }
+
+        c = new Child('Copil');
+        console.log(c.getChildName());
+        console.log(c.getParentName());
+
+
+    </script>
+
+</body>
+
+</html>
