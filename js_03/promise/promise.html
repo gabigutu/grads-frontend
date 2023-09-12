@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+
+    <script>
+        let mayResolveOrNot = new Promise(function(resolve, reject) {
+            const rand = Math.random(); // [0; 1)
+            if (rand < 0.5) resolve('Toate bune');
+            else reject('Eroare');
+        });
+        mayResolveOrNot.then(resolveResponse => {
+            console.log('Am primit de la resolve: ', resolveResponse);
+        });
+        mayResolveOrNot.catch(rejectResponse => {
+            console.log('Am primit de la reject: ', rejectResponse);
+        })
+
+        const todosUrl = 'https://jsonplaceholder.typicode.com/todos?userId=7';
+        let promiseTodoUser = new Promise(function(res, rej) {
+            const xmlHttpRequest = new XMLHttpRequest();
+            xmlHttpRequest.open('GET', todosUrl);
+            xmlHttpRequest.setRequestHeader('User-Agent', 'Vasilica');
+            xmlHttpRequest.onreadystatechange = function() {
+                console.log('s-a schimbat starea ', this.readyState, this.status);
+                if (this.readyState === 4 && this.status === 200) {
+                    // rej('Ceva eroare');
+                    // console.log('T1 3) a venit raspunsul ', this.responseText);
+                    console.log('T1 3) a venit raspunsul ');
+                    const responseObj = JSON.parse(this.responseText);
+                    res(responseObj);
+                } else if (this.readyState === 4 && this.status === 500) {
+                    rej('Problema pe server');
+                } else if (this.readyState === 4 && this.status === 404) {
+                    rej('Not found');
+                }
+            }
+            xmlHttpRequest.send(); // 2 minute
+        });
+        console.log(promiseTodoUser);
+        console.log('T0 1) mesaj de dupa initializare promise');
+        promiseTodoUser.then((response) => {
+            console.log('Obiect promise pe then', promiseTodoUser);
+            console.log('Am primit de la todos user ', response);
+        });
+        promiseTodoUser.catch((errorMessage) => {
+            console.log('Obiect promise pe reject', promiseTodoUser);
+            console.log('Am primit eroare de la todos user ', errorMessage);
+        });
+        console.log('T0 2) mesaj de dupa setare then');
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let trezirePromise = new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                console.log('T1 Trezirea');
+                resolve('Ne-am trezit');
+            }, 3 * 1000);
+        }).then(function(response) {
+            console.log('T0 Am primit pe resolve ', response);
+        });
+        console.log('T0 Mesaj de dupa promise');
+    </script>
+</body>
+</html>

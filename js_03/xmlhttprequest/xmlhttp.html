@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML Http Request</title>
+</head>
+<body>
+
+    <script>
+        const xmlHttpRequest = new XMLHttpRequest();
+        xmlHttpRequest.open('GET', 'https://jsonplaceholder.typicode.com/todos?userId=7');
+        xmlHttpRequest.setRequestHeader('User-Agent', 'Vasilica');
+        xmlHttpRequest.onreadystatechange = function() {
+            console.log('s-a schimbat starea ', this.readyState, this.status);
+            if (this.readyState === 4 && this.status === 200) {
+                console.log('a venit raspunsul ', this.responseText);
+                const responseObj = JSON.parse(this.responseText);
+                console.log(responseObj);
+                console.log(responseObj[3].title);
+            }
+        }
+        xmlHttpRequest.send();
+    </script>
+    
+</body>
+</html>
